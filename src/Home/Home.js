@@ -26,13 +26,9 @@ const useStyles = makeStyles((theme) => ({
     height: "455px",
     display: "flex",
     justifyContent: "center",
-    // alignItems: "center",
     padding: 0,
     margin: 0,
   },
-  // mainContent: {
-  //   width: "1192px",
-  // },
   heading: {
     maxWidth: "550px",
     marginBottom: "35px",
@@ -49,7 +45,6 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     width: "75%",
-    // margin: 0;
     marginBottom: "50px",
     display: "block",
     boxSizing: "inherit",
@@ -77,9 +72,9 @@ const useStyles = makeStyles((theme) => ({
     cursor: "pointer",
     textDecoration: "none",
     textTransform: "capitalize",
-    [theme.breakpoints.down("xs")]: {
-      display: "none",
-    },
+    // [theme.breakpoints.down("xs")]: {
+    //   display: "none",
+    // },
   },
   image: {
     maxWidth: "100%",
@@ -94,6 +89,34 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+  },
+
+  // Styles for resolutions less than 300px
+  "@media (max-width: 300px)": {
+    container: {
+      height: "auto",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "center",
+    },
+    heading: {
+      fontSize: "60px",
+      lineHeight: "70px",
+      marginTop: "50px",
+      marginBottom: "20px",
+    },
+    title: {
+      width: "90%",
+      fontSize: "18px",
+      lineHeight: "24px",
+      marginBottom: "30px",
+    },
+    // linkMain: {
+    //   display: "none",
+    // },
+    image: {
+      display: "none",
+    },
   },
 }));
 

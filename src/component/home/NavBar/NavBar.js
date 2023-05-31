@@ -11,21 +11,20 @@ import CircularProgress from "@material-ui/core/CircularProgress";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    marginBottom: "65px",
+    marginBottom: theme.spacing(8), // Use spacing instead of hard-coded value
   },
   header: {
     backgroundColor: "#ffc017",
     borderBottom: "solid 1px #000",
     boxShadow: "none",
   },
-
   headerActive: {
     backgroundColor: "#fff",
   },
   toolbar: {
     display: "flex",
     justifyContent: "center",
-    boxsizing: "inherit",
+    boxSizing: "inherit",
   },
   bar: {
     width: "1192px",
@@ -33,6 +32,10 @@ const useStyles = makeStyles((theme) => ({
     height: "65px",
     alignItems: "center",
     justifyContent: "center",
+    [theme.breakpoints.down("xs")]: {
+      width: "100%",
+      padding: theme.spacing(0, 1), // Use spacing instead of hard-coded value
+    },
   },
   headerRightOption: {
     margin: "0px 25px",
@@ -40,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "17px",
     textDecoration: "none",
     color: "#000",
-    fontWeight: "400",
+    fontWeight: 400,
     textTransform: "capitalize",
     [theme.breakpoints.down("xs")]: {
       display: "none",
@@ -49,11 +52,10 @@ const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
   },
-
   accentedButton: {
     outline: "none",
     border: "none",
-    padding: "10px 15px",
+    padding: theme.spacing(1.25, 1.875), // Use spacing instead of hard-coded value
     backgroundColor: "#000",
     color: "#fff",
     borderRadius: "33px",
@@ -65,7 +67,7 @@ const useStyles = makeStyles((theme) => ({
   accentedButtonActive: {
     outline: "none",
     border: "none",
-    padding: "10px 15px",
+    padding: theme.spacing(1.25, 1.875), // Use spacing instead of hard-coded value
     backgroundColor: "green",
     color: "#fff",
     borderRadius: "33px",

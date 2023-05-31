@@ -14,13 +14,10 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
-
 import Container from "@material-ui/core/Container";
-
 // import "./EditPost.css";
 import { makeStyles } from "@material-ui/core/styles";
 import icon from "../../../assets/medium.icon.png";
-
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import { db } from "../../../config/firebase-config";
 import { useNavigate } from "react-router-dom";
@@ -99,7 +96,6 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     display: "flex",
     justifyContent: "space-between",
-    // gap: "1rem",
     marginTop: "2rem",
   },
   buttonDiv: {
@@ -112,6 +108,57 @@ const useStyles = makeStyles((theme) => ({
     color: "white",
     padding: "2px 4px",
     borderRadius: "50%",
+  },
+
+  // Styles for resolutions less than 300px
+  [`@media (max-width: 300px)`]: {
+    editPostContainer: {
+      flexDirection: "column",
+      alignItems: "center",
+      height: "auto",
+      paddingLeft: "10px !important",
+      paddingRight: "10px !important",
+    },
+    userName: {
+      fontSize: "18px",
+      marginBottom: "10px",
+    },
+    userContainer: {
+      width: "100%",
+      justifyContent: "center",
+      marginBottom: "10px",
+    },
+    userImage: {
+      width: "100%",
+      height: "auto",
+      [theme.breakpoints.down("xs")]: {
+        display: "none",
+      },
+    },
+    textContainer: {
+      maxWidth: "100%",
+      paddingLeft: "10px",
+      paddingRight: "10px",
+    },
+    fieldTitle: {
+      maxWidth: "100%",
+      marginBottom: "5px",
+    },
+    inputField: {
+      width: "100%",
+      marginBottom: "10px",
+    },
+    modalInputContainer: {
+      width: "100%",
+    },
+    smallField: {
+      flexDirection: "column",
+      alignItems: "center",
+      marginTop: "1rem",
+    },
+    buttonDiv: {
+      marginBottom: "15px",
+    },
   },
 }));
 
