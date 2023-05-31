@@ -127,7 +127,7 @@ const Home = () => {
     } else {
       setAlert({
         open: true,
-        message: "You Have to signIn first",
+        message: "You have to signIn first",
         type: "error",
       });
     }

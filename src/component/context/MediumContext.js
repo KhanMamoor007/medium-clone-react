@@ -98,7 +98,7 @@ export const MediumProvider = ({ children }) => {
           setIsLoading(false);
           setAlert({
             open: true,
-            message: `Sign Up Successful. Welcome ${user.displayName}`,
+            message: `Sign up successful. welcome ${user.displayName}`,
             type: "success",
           });
         }, 1000);
@@ -115,7 +115,7 @@ export const MediumProvider = ({ children }) => {
       navigate("/");
       setAlert({
         open: true,
-        message: `Sign Out Successful. GoodBy ${user.displayName}`,
+        message: `Sign out successful. goodby ${user.displayName}`,
         type: "error",
       });
     });
