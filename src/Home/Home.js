@@ -126,8 +126,15 @@ const LoadingWrapper = ({ isLoading, children }) => {
   return (
     <div className={classes.circle}>
       {isLoading ? (
-        <div className={classes.loading}>
-          <CircularProgress color="secondary" />
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "100vh",
+          }}
+        >
+          <CircularProgress color="#000" size={50} />
         </div>
       ) : (
         children
@@ -144,7 +151,7 @@ const Home = () => {
 
   const handleStartWriting = () => {
     if (user) {
-      navigate("/EditPost");
+      navigate("/create-post");
 
       return;
     } else {

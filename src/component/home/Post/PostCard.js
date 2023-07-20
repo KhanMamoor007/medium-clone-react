@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../../config/firebase-config";
 import "./PostCard.css";
+import Chip from "@material-ui/core/Chip";
 
 const PostCard = ({ post }) => {
   const [authorData, setAuthorData] = useState(null);
@@ -18,7 +19,7 @@ const PostCard = ({ post }) => {
   console.log(authorData?.imageUrl);
   return (
     <div className="post">
-      <Link className="post-Card" to={`/postDetails/${post.id}`}>
+      <Link className="post-Card" to={`/post-details/${post.id}`}>
         <div className="posts-Details">
           <div className="author-Post-Container">
             <div className="author-Image-Container">
@@ -30,7 +31,13 @@ const PostCard = ({ post }) => {
                 />
               )}
             </div>
-            <div className="author-Name">{authorData?.name}</div>
+            {/* <div className="author-Name">{authorData?.name}</div> */}
+            <Chip
+              className="author-Name"
+              label={authorData?.name}
+              component="a"
+              clickable
+            />
           </div>
           <h2 className="title-Post">{post.data.title}</h2>
           <div className="briefing">{post.data.brief}</div>
@@ -40,8 +47,14 @@ const PostCard = ({ post }) => {
                 day: "numeric",
                 month: "short",
               })}
-              • {post.data.postLength} min read •{" "}
-              <span className="category">{post.data.category}</span>
+              • {post.data.postLength} min read •
+              <Chip
+                label={post.data.category}
+                component="a"
+                href="#chip"
+                clickable
+              />
+              {/* <span className="category">{post.data.category}</span> */}
             </span>
             <span className="bookmark-Container"></span>
           </div>

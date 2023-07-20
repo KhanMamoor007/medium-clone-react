@@ -14,6 +14,8 @@ import KeyboardBackspaceIcon from "@material-ui/icons/KeyboardBackspace";
 import HorizontalSplitIcon from "@material-ui/icons/HorizontalSplit";
 import "../PostDetails/PostDetails.css";
 import { IconButton } from "@material-ui/core";
+import Footer from "../Footer";
+import Chip from "@material-ui/core/Chip";
 
 const Post = () => {
   const { slug } = useParams();
@@ -40,97 +42,106 @@ const Post = () => {
   };
 
   return (
-    <div className="wrapper">
-      <div className="content">
-        {post && author && post.length > 0 && author.length > 0 ? (
-          <>
-            <Button onClick={handleBackButtonClick}>
-              <KeyboardBackspaceIcon />
-              Back
-            </Button>
-            <div className="referencesContainer">
-              <div className="authorContainer">
-                <div className="authorProfileImageContainer">
-                  <img
-                    className="image"
-                    src={`${author[0].data.imageUrl}`}
-                    alt="author"
-                    width={100}
-                    height={100}
-                  />
-                </div>
-                <div className="column">
-                  <div>{author[0].data?.name}</div>
-                  <div className="postDetails">
-                    <span>
-                      {" "}
-                      {new Date(post[0].data?.postedOn).toLocaleString(
-                        "en-US",
-                        {
-                          day: "numeric",
-                          month: "short",
-                        }
-                      )}{" "}
-                      • {post[0].data?.postLength} min read •
-                    </span>
-                    <span className="listenButton">
-                      <PlayCircleFilledIcon /> Listen
-                    </span>
+    <>
+      <div className="wrapper">
+        <div className="content">
+          {post && author && post.length > 0 && author.length > 0 ? (
+            <>
+              <Button onClick={handleBackButtonClick}>
+                <KeyboardBackspaceIcon />
+                Back
+              </Button>
+              <div className="referencesContainer">
+                <div className="authorContainer">
+                  <div className="authorProfileImageContainer">
+                    <img
+                      className="image"
+                      src={`${author[0].data.imageUrl}`}
+                      alt="author"
+                      width={100}
+                      height={100}
+                    />
+                  </div>
+                  <div className="column">
+                    <Chip
+                      label={author[0].data?.name}
+                      component="a"
+                      clickable
+                    />
+
+                    <div className="postDetails">
+                      <span>
+                        {new Date(post[0].data?.postedOn).toLocaleString(
+                          "en-US",
+                          {
+                            day: "numeric",
+                            month: "short",
+                          }
+                        )}{" "}
+                        • {post[0].data?.postLength} min read •
+                      </span>
+                      <span className="listenButton">
+                        <PlayCircleFilledIcon /> Listen
+                      </span>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="socials">
-                <IconButton>
-                  <TwitterIcon />
-                </IconButton>
-                <IconButton>
-                  <FacebookIcon />
-                </IconButton>
-                <IconButton>
-                  <LinkedInIcon />
-                </IconButton>
-                <IconButton>
-                  <FileCopyIcon />
-                </IconButton>
+                <div className="socials">
+                  <IconButton>
+                    <TwitterIcon />
+                  </IconButton>
+                  <IconButton>
+                    <FacebookIcon />
+                  </IconButton>
+                  <IconButton>
+                    <LinkedInIcon />
+                  </IconButton>
+                  <IconButton>
+                    <FileCopyIcon />
+                  </IconButton>
 
-                <div className="space" />
-                <IconButton>
-                  <BookmarkIcon />
-                </IconButton>
-                <IconButton>
-                  <HorizontalSplitIcon />
-                </IconButton>
-              </div>
-            </div>
-            <div className="articleMainContainer">
-              <div className="bannerContainer">
-                <img
-                  className="image"
-                  src={`${post[0].data.bannerImage}`}
-                  alt="banner"
-                />
-              </div>
-              <h1 className="title">{post[0].data?.title}</h1>
-              <h4 className="subtitle">
-                <div>
-                  {" "}
-                  {author[0].data?.name},{" "}
-                  {new Date(post[0].data?.postedOn).toLocaleString("en-US", {
-                    day: "numeric",
-                    month: "short",
-                    year: "numeric",
-                  })}
+                  <div className="space" />
+                  <IconButton>
+                    <BookmarkIcon />
+                  </IconButton>
+                  <IconButton>
+                    <HorizontalSplitIcon />
+                  </IconButton>
                 </div>
-                <div>{post[0].data?.brief}</div>
-              </h4>
-              <div className="articleText">{post[0].data?.body} </div>
-            </div>
-          </>
-        ) : (
-          <div>Loading...</div>
-        )}
+              </div>
+              <div className="articleMainContainer">
+                <div className="bannerContainer">
+                  <img
+                    className="image"
+                    src={`${post[0].data.bannerImage}`}
+                    alt="banner"
+                  />
+                </div>
+                <h1 className="title">{post[0].data?.title}</h1>
+                <h4 className="subtitle">
+                  <div>
+                    {" "}
+                    {author[0].data?.name},{" "}
+                    {new Date(post[0].data?.postedOn).toLocaleString("en-US", {
+                      day: "numeric",
+                      month: "short",
+                      year: "numeric",
+                    })}
+                  </div>
+                  <div>{post[0].data?.brief}</div>
+                </h4>
+                <div className="articleText">{post[0].data?.body} </div>
+              </div>
+            </>
+          ) : (
+            <div>Loading...</div>
+          )}
+          <footer>
+            <Footer />
+          </footer>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -80,7 +80,6 @@ export const MediumProvider = ({ children }) => {
       email: user.email,
       name: user.displayName,
       imageUrl: user.photoURL,
-      followerCount: 0,
     });
   };
 

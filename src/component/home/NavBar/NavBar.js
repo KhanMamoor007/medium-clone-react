@@ -6,7 +6,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Logo from "../../../assets/logo.medium.png";
 import Button from "@material-ui/core/Button";
-import CircularProgress from "@material-ui/core/CircularProgress";
+import { CircularProgress } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -69,7 +69,7 @@ const useStyles = makeStyles((theme) => ({
     border: "none",
     padding: theme.spacing(1.25, 1.875), // Use spacing instead of hard-coded value
     backgroundColor: "green",
-    color: "#fff",
+    color: "#000",
     borderRadius: "33px",
     fontSize: "15px",
     margin: "0 18px",
@@ -117,10 +117,13 @@ export default function NavBar() {
 
             {/* USER */}
             {isLoading ? (
-              <CircularProgress color="secondary" /> // Show loading indicator while signing in
+              <CircularProgress color="primary" /> // Show loading indicator while signing in
             ) : user ? (
               <>
-                <Button href="/EditPost" className={classes.headerRightOption}>
+                <Button
+                  href="/create-Post"
+                  className={classes.headerRightOption}
+                >
                   Write
                 </Button>
                 <Button

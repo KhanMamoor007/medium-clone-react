@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./Home/Home";
-import EditPost from "./component/Pages/EditPost/EditPost";
+import CreatePost from "./component/Pages/CreatePost/CreatePost";
 import Login from "../src/component/Auth/Login";
 import PostDetails from "./component/Pages/PostDetails/PostDetails";
 import { MediumProvider } from "./component/context/MediumContext";
@@ -17,12 +17,12 @@ function App({ post, author }) {
           <Route path="/Login" element={<Login />} />
 
           <Route
-            path="/EditPost"
-            element={<EditPost post={post} author={author} />}
+            path="/create-post"
+            element={<CreatePost post={post} author={author} />}
           />
 
           <Route
-            path="/postDetails/:slug"
+            path="/post-details/:slug"
             element={<PostDetails post={post} author={author} />}
           />
         </Routes>

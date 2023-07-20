@@ -7,12 +7,12 @@ import { GoogleAuthProvider } from "firebase/auth";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCUWokV5jtMXb1bvLR4lAfm2UpEd5-9Bpo",
-  authDomain: "medium-clone-react-ceadb.firebaseapp.com",
-  projectId: "medium-clone-react-ceadb",
-  storageBucket: "medium-clone-react-ceadb.appspot.com",
-  messagingSenderId: "971368572266",
-  appId: "1:971368572266:web:5d62bd528808eb04437113",
+  apiKey: "AIzaSyAFkT1a0TE8FRwd332qxk-jolUofeIl1Wg",
+  authDomain: "medium-clone-react-a5ea9.firebaseapp.com",
+  projectId: "medium-clone-react-a5ea9",
+  storageBucket: "medium-clone-react-a5ea9.appspot.com",
+  messagingSenderId: "856383770196",
+  appId: "1:856383770196:web:61909cc223b3f06b1567c1",
 };
 
 // Initialize Firebase
